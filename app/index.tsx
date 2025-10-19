@@ -1,10 +1,10 @@
-import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, ActivityIndicator } from 'react-native';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { AlarmList } from '../components/AlarmList';
+import { BorderRadius, Colors, FontSizes, Spacing } from '../constants/theme';
 import { useAlarms } from '../hooks/useAlarms';
-import { Colors, Spacing, BorderRadius, FontSizes } from '../constants/theme';
 import { Alarm } from '../types/alarm';
 
 export default function HomeScreen() {

@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  TextInput,
-  ScrollView,
-  Platform,
-  Alert,
-} from 'react-native';
-import { useRouter, useLocalSearchParams } from 'expo-router';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import React, { useEffect, useState } from 'react';
+import {
+    Alert,
+    Platform,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
+} from 'react-native';
 import { RepeatDaysSelector } from '../components/RepeatDaysSelector';
+import { BorderRadius, Colors, FontSizes, Spacing } from '../constants/theme';
 import { useAlarms } from '../hooks/useAlarms';
 import { Alarm, RepeatDay } from '../types/alarm';
-import { Colors, Spacing, BorderRadius, FontSizes } from '../constants/theme';
 
 export default function EditorScreen() {
   const router = useRouter();
