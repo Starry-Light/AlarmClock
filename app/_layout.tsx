@@ -2,8 +2,8 @@ import * as Notifications from 'expo-notifications';
 import { Stack, useRouter } from 'expo-router';
 import { useEffect, useRef } from 'react';
 import { AppState, Linking } from 'react-native';
-import { notificationService } from '../services/notificationService';
 import { alarmEventService } from '../services/alarmEventService';
+import { notificationService } from '../services/notificationService';
 
 export default function RootLayout() {
   const router = useRouter();

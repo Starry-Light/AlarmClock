@@ -1,6 +1,6 @@
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { AlarmList } from '../components/AlarmList';
 import { BorderRadius, Colors, FontSizes, Spacing } from '../constants/theme';
@@ -9,7 +9,14 @@ import { Alarm } from '../types/alarm';
 
 export default function HomeScreen() {
   const router = useRouter();
-  const { alarms, loading, error, toggleAlarm, deleteAlarm } = useAlarms();
+  const { alarms, loading, error, toggleAlarm, deleteAlarm, refreshAlarms } = useAlarms();
+
+  // Refresh alarms when screen comes into focus
+  useFocusEffect(
+    useCallback(() => {
+      refreshAlarms();
+    }, [refreshAlarms])
+  );
 
   const handleAddAlarm = () => {
     router.push('/editor');
