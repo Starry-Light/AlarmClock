@@ -1,0 +1,9 @@
+{
+  "name": "alarm-native-module",
+  "version": "1.0.0",
+  "description": "Native alarm module for Android AlarmManager",
+  "main": "index.js",
+  "android": {
+    "package": "com.anonymous.AlarmClock"
+  }
+}
